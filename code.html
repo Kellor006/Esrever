@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>App Name: A Coding Project by Richard Bacsa</title>
+    <title>ESREVER: A Coding Project by Richard Bacsa</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +26,7 @@
         <!--------NAV SECTION---------->
 <nav class="pixelTextNav navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/Website logo 250x150A.png" class="d-inline-block alight-text-top" width="30" height="24">APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="img/ESREVERMenuLogo.png" class="d-inline-block alight-text-top" width="30" height="24">ESREVER</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -55,22 +55,59 @@
    <!--------MAIN SECTION---------->
    <main class="flex-shrink-0">
     <div class="container py-5 px-5 mt-5">
-        <h1 class="border-1 border-bottom border-dark pixelText">The Code for APP NAME</h1>
+        <h1 class="border-1 border-bottom border-dark pixelText">The Code for ESREVER</h1>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function HelloWorld()
-                        {
-                        alert("Hello World");
-                        }
+                        // Get the string from the page.
+// Controller f.
+function getValue() 
+{
+    document.getElementById("alertBlock").classList.add("invisible");
+    let userString = document.getElementById("userString").value;
+    let revString = reverseString(userString);
+    displayString(revString);
+}
+
+//Reverse the string. 
+// Logic f
+function reverseString(userString)
+{
+    let revString = [];
+    //reverse string using a for loop
+    //last pos in an array name.length - 1
+
+    for (let index = userString.length - 1; index >= 0; index--) 
+    {
+        revString += userString[index];
+    }
+
+    return revString;
+
+}
+
+//Display the reversed string to the user. 
+// View f.
+function displayString(revString) 
+{
+    //write to the page
+    document.getElementById("msg").innerHTML = `The revered text is: ${revString}`;
+    //turn alert box on (from invisible)
+    document.getElementById("alertBlock").classList.remove("invisible");
+}
                     </code>
                     </pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code is structured is one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a fucntion that displays an alert with the text "Hello World"</p>
+                <h5>ESREVER</h5>
+                <p><b>getValue()</b>is the controller functions, first it sets the invisible classlist from our HTML class. 
+                Then we get the value from our input string, which then goes through the reverseString function and finally displayed.</p>
+                <p><b>reverseString(userString)</b>we provide a value to the reverseString by creating an array. The array takes the userString (input)
+                and runs in through a for loop. Inside this for loop the index get's it's value from userString.length as the max number of values and count backwards
+            to 0 by going from [max][0] the array is reversed. userString="Test" [0][1][2][3] by running userString.length - 1 the array is recieves the numbers [3][2][1][0]
+        which becomes revString and get's returned. </p>
+                <p><b>displayString(revString)</b></p> with a value of revString attached to the displayString, we push the values HTML side by creating a paragraph class with template literals. 
+                we then also remove/false the classList invisible that was on/true revleaing the string.  
             </div>
         </div>
     </div>
@@ -83,7 +120,7 @@
                 <div><span class="text-muted">&copy;2021</span> Richard Bacsa | Richard.jbacsa@gmail.com</div>
             </div>
             <div class ="col d-flex align-items-center justify-content-start justify-content-lg-center">
-                <img src="/img/Website logo 250x150A.png" alt="Richard Bacsa Logo" height="50">
+                <img src="/img/ESREVERlogoA.png" alt="Richard Bacsa Logo" height="50">
             </div>
             <div class ="col d-flex align-items-center justify-content-start justify-content-lg-end">
                 <div class ="row">
